@@ -33,6 +33,11 @@ android {
     ksp {
         arg("room.schemaLocation", "$projectDir/schemas")
     }
+
+    sourceSets {
+        // Adds exported schema location as test app assets.
+        getByName("androidTest").assets.srcDir("$projectDir/schemas")
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -88,9 +93,13 @@ dependencies {
     implementation ("androidx.room:room-runtime:2.5.1")
     ksp ("androidx.room:room-compiler:2.5.1")
     implementation ("androidx.room:room-ktx:2.5.1")
+    androidTestImplementation("androidx.room:room-testing:2.5.1")
 
     //koin
     implementation ("io.insert-koin:koin-android:3.4.0")
     implementation ("io.insert-koin:koin-core:3.4.0")
     implementation ("io.insert-koin:koin-androidx-compose:3.4.3")
+
+
+
 }

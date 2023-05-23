@@ -32,7 +32,8 @@ class HomeScreenViewModel(
         val person = PersonEntity(
             personId = UUID.randomUUID().toString(),
             firstName = generateRandomString(length = 10),
-            lastName = generateRandomString(length = 5)
+            lastName = generateRandomString(length = 5),
+            email = generateRandomString(length = 5)
         )
         viewModelScope.launch {
             personRepository.insertPerson(personEntity = person)

@@ -61,11 +61,11 @@ fun PersonCard(
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = "Name :" + personEntity.firstName + " " + personEntity.lastName,
+                    text = "Name : " + personEntity.firstName + " " + personEntity.lastName,
                     fontWeight = FontWeight.Bold,
 
                     )
-                Text(text = personEntity.personId)
+                Text(text = "Email : " +  personEntity.email)
 
             }
             Row(
